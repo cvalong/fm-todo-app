@@ -11,6 +11,12 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Frontend Mentor | Todo app</title>
 
@@ -18,25 +24,46 @@
   </head>
   <body>
     <header>
-      <h1 class="page-title">Todo</h1>
-      <img
-        class="light-dark-toggle icon dark-mode"
-        src="./images/icon-sun.svg"
-      />
+      <div class="title-container">
+        <h1 class="page-title">Todo</h1>
+        <button class="light-dark-toggle dark-mode">
+          <img class="icon" src="./images/icon-sun.svg" />
+        </button>
+      </div>
       <input
         type="text"
         name="name"
-        id="todo-input"
+        id="user-input"
         placeholder="Create a new todo..."
       />
     </header>
     <main class="todo-app">
-      <div class="todo-container">
-        <!-- sample todo?? -->
-        <li class="checked">Pay bills</li>
-      </div>
-      <p class="dynamic-num action-notification">
-        <!-- Add dynamic number -->
+      <ul class="todo-container">
+        <!-- sample todos -->
+        <li class="todo-group">
+          <input
+            type="checkbox"
+            name="todo-checked"
+            id="todo-checked"
+            class="todo-input"
+            checked
+          />
+          <label for="todo-checked">Complete online Javascript course</label>
+          <button class="delete-button">
+            <img src="./images/icon-cross.svg" alt="x" />
+          </button>
+        </li>
+
+        <li class="todo-group">
+          <input type="checkbox" name="todo" id="todo" />
+          <label for="todo">Jog around the park 3x</label>
+          <button class="delete-button">
+            <img src="./images/icon-cross.svg" alt="x" />
+          </button>
+        </li>
+      </ul>
+      <p class="dynamic-container action-notification">
+        <span class="dynamic-num"><!-- Add dynamic number --></span>
         items left
       </p>
       <ul class="action-bar">
